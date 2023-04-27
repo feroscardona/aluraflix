@@ -2,7 +2,7 @@
 import styled from "styled-components";
 import baner from "../../img/baner2.png"
 
-const StyleBaner = styled.section`
+const StyleBaner = styled.div`
     width: 100%;
     height: 85vh;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.8) 70%), url(${baner});

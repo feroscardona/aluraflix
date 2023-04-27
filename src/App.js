@@ -6,15 +6,14 @@ import { Footer } from "./conponents/Footer";
 
 function App() {
   return (
-    <>
+    <main>
       <GlobalStyle/>
       <Header>
         <MiButton fontColor={"white"} colorBorder={"White"}>Nuevo video</MiButton>
       </Header>
-      <Baner>
-      </Baner>
+      <Baner/>
       <Footer/>
-    </>
+    </main>
   );
 }
 

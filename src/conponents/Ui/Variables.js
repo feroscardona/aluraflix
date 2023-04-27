@@ -16,3 +16,4 @@ export const grisMedio = "#E5E5E5";
 export const grisclaro = "#F5F5F5";
 export const colorErrorDark = "#C62828";
 export const colorErrorMedium = "#E53935";
+
