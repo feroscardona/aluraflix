@@ -11,6 +11,10 @@ const StyleHeader = styled.section`
     justify-content: space-between;
     align-items: center;
     background-color: ${colorGrayDark} ;
+    @media screen and (max-width: 376px ){
+        padding: 10px 20px;
+        justify-content: center;
+    }
     
 `
 const StyleImg = styled.img`

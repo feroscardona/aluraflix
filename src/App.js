@@ -1,17 +1,19 @@
 import GlobalStyle from "./GlobalStyle";
 import Header from "./conponents/Header";
 import { MiButton } from "./conponents/Botton";
-import { Baner } from "./conponents/Baner";
 import { Footer } from "./conponents/Footer";
+import { Defaultpage } from "./conponents/Defaultpage";
+
 
 function App() {
+ 
   return (
     <main>
       <GlobalStyle/>
       <Header>
-        <MiButton fontColor={"white"} colorBorder={"White"}>Nuevo video</MiButton>
+        {window.innerWidth > 375 && <MiButton fontColor={"white"} colorBorder={"White"} >Nuevo video</MiButton>}
       </Header>
-      <Baner/>
+      <Defaultpage/>
       <Footer/>
     </main>
   );
