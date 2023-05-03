@@ -1,0 +1,12 @@
+{
+"producto": [
+    {
+      "imgUrl": "imagenes/posillo-cascoblanco.png",
+      "categoria": "starwars",
+      "name": "pocillo star wars",
+      "precio": "15.000",
+      "descripcion": "pocillo de star wars blanco echo en cerámica  ",
+      "id": "Xtd3ZIhmYT"
+    }
+]
+}
