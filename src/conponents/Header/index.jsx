@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { MiButton } from "../Botton";
 import logo from "../../img/logo_AluraFlix.png"
 
 import { colorGrayDark } from "../Ui/Variables";
@@ -23,11 +23,11 @@ const StyleImg = styled.img`
 
 
 
-const Header = ({children })=>{
+const Header = ()=>{
     return (
         <StyleHeader>
             <StyleImg src={logo} alt="logo"/>  
-             {children }
+             {window.innerWidth > 375 && <MiButton fontColor={"white"} colorBorder={"White"} >Nuevo video</MiButton>}
         </StyleHeader>
 
     )

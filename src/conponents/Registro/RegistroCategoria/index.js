@@ -1,30 +1,28 @@
 import React from 'react';
-import { useFormik} from 'formik';
-import validation from '../../../validaciones';
+import { useContext } from 'react';
+import { CounterContext } from '../../../Context';
 import  Button  from '@mui/material/Button';
 import CampoTexto from '../../CampoTexto';
-
-
+import BasicSelect from '../../Select';
+import { Box} from '@mui/material';
+import Typography from '@mui/material/Typography';
+import { colorGrayLighter } from '../../Ui/Variables';
 
 
 const RegistroCategoria = () => {
-  const formik = useFormik({
-    initialValues: {
-      title: '',
-      urlVideo: '',
-      urlImg: "",
-    },
-    validationSchema: validation,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      
-    },
-  });
+  const formik = useContext(CounterContext)
   
   return (
-    <div>
-      <form onSubmit={formik.handleSubmit}>
+    
+      <Box component="form"
+        
+        sx={{padding:"20px"}}
+       onSubmit={formik.handleSubmit}>
+        <Typography variant='h3' component="h2" align='center' color="white" marginBottom="37px">
+          Nuevo video
+        </Typography>
         <CampoTexto
+          sx={{paddingBottom:"20px"}}
           InputLabelProps={{
             shrink: true,
           }}
@@ -39,6 +37,7 @@ const RegistroCategoria = () => {
           helperText={formik.touched.title && formik.errors.title}
         />
         <CampoTexto
+          sx={{paddingBottom:"20px"}}
           variant="filled"
           InputLabelProps={{
             shrink: true,
@@ -55,6 +54,7 @@ const RegistroCategoria = () => {
         />
 
         <CampoTexto
+          sx={{paddingBottom:"20px"}}
           variant="filled"
           InputLabelProps={{
             shrink: true,
@@ -69,13 +69,72 @@ const RegistroCategoria = () => {
           helperText={formik.touched.urlImg && formik.errors.urlImg}
           
         />
+        <BasicSelect/>
+        <CampoTexto
+          sx={{ backgroundColor:`${colorGrayLighter}`, marginBottom:"37px", borderRadius:"4px",
+          ":hover":{
+            backgroundColor:`${colorGrayLighter}`
+          },
+
+          "div":{
+            backgroundColor:`${colorGrayLighter}`
+          },
+          "p":{
+            backgroundColor:"transparent"
+          }
+        }}
+          variant="filled"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          fullWidth
+          multiline
+          rows={4}
+          label="Descripción"
+          name='textArea'
+          value={formik.values.textArea}
+          onChange={formik.handleChange}
+          error={formik.touched.textArea && Boolean(formik.errors.textArea)}
+          helperText={formik.touched.textArea && formik.errors.textArea}
+        />
+        <Box sx={{
+          display:'flex', 
+          justifyContent:'space-between',
+          flexWrap:"wrap",
+          paddingBottom:"130px"
+          }}>
+          <Box sx={{display:"flex",flexWrap:"wrap",gap:"5px", marginBottom:"30px"}}>
+          <Button sx={{width:"150px",marginRight:"30px"}}color="primary" variant="contained"  type="submit">
+            Guardar
+          </Button>
+          <Button 
+            sx={{
+              backgroundColor:"#9e9e9e9e", 
+              color:"white",  
+              width:"150px"
+            }} 
+            hidden
+          >
+            Limpiar
+         </Button>
+          </Box>
+          {window.innerWidth > 375 ?
+          <Box >
+          <Button sx={{width:"100%"}} color="primary" variant="contained">
+            Nueva Categoría
+          </Button>
+          </Box>:
+                    <Box sx={{width:"100%"}}>
+                    <Button sx={{width:"100%"}} color="primary" variant="contained">
+                      Nueva Categoría
+                    </Button>
+                    </Box>
+          }
+          
+        </Box>
         
-        
-        <Button color="primary" variant="contained" fullWidth type="submit">
-          Submit
-        </Button>
-      </form>
-    </div>
+      </Box>
+    
   );
 };
 export default RegistroCategoria;

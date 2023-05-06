@@ -32,9 +32,7 @@ const BoxVideo = styled.div`
 width: 55%;
 border: solid 2px aqua;
 
-button{
-    display: none;
-}
+
 @media screen and (max-width: 769px) {
         width: 100%;
     }

@@ -9,7 +9,13 @@ const validation = yup.object().shape({
       .required("Campo requerido"),
       urlImg: yup
       .string()
-      .required("Campo requerido")
+      .required("Campo requerido"),
+      textArea: yup
+      .string()
+      .required("campo requerido"),
+      select: yup
+      .string()
+      .required("campo requerido")
   });
 
   export default validation;

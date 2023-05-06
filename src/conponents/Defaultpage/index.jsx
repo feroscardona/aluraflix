@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colorGrayDark } from "../Ui/Variables";
 import RegistoCategoria from "../Registro/RegistroCategoria";
+import { CounterFormik } from "../../Context";
 
 
 
@@ -14,8 +15,10 @@ const StyleDefault = styled.section`
 
 export const Defaultpage = ()=>{
     return (
-        <StyleDefault>
-          <RegistoCategoria/>
-        </StyleDefault>
+        <CounterFormik>
+            <StyleDefault>
+                <RegistoCategoria/>
+            </StyleDefault>
+        </CounterFormik>
     )
 }
