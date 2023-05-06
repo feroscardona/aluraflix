@@ -50,8 +50,8 @@ export default function BasicSelect() {
           select
           label="Escoja una Categoría"
           value={formik.values.select}
-          error={formik.touched.title && Boolean(formik.errors.title)}
-          helperText={formik.touched.title && formik.errors.title}
+          error={formik.touched.select && Boolean(formik.errors.select)}
+          helperText={formik.touched.select && formik.errors.select}
           onChange={formik.handleChange}
         >
           {profesiones.map((opcion,index) => (
