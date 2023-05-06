@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import { colorGrayLighter } from '../../Ui/Variables';
 
 
-const RegistroCategoria = () => {
+const RegistroVideo = () => {
   const formik = useContext(CounterContext)
   
   return (
@@ -137,4 +137,4 @@ const RegistroCategoria = () => {
     
   );
 };
-export default RegistroCategoria;
+export default RegistroVideo;
