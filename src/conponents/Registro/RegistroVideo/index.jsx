@@ -10,7 +10,7 @@ import { colorGrayLighter } from '../../Ui/Variables';
 
 
 const RegistroVideo = () => {
-  const formik = useContext(CounterContext)
+  const {formik} = useContext(CounterContext)
   
   return (
     
@@ -96,6 +96,21 @@ const RegistroVideo = () => {
           onChange={formik.handleChange}
           error={formik.touched.textArea && Boolean(formik.errors.textArea)}
           helperText={formik.touched.textArea && formik.errors.textArea}
+        />
+          <CampoTexto
+          sx={{paddingBottom:"20px"}}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant="filled"
+          fullWidth
+          name="codigo"
+          label="Código de seguridad"
+          type='text'
+          value={formik.values.codigo}
+          onChange={formik.handleChange}
+          error={formik.touched.codigo && Boolean(formik.errors.codigo)}
+          helperText={formik.touched.codigo && formik.errors.codigo}
         />
         <Box sx={{
           display:'flex', 

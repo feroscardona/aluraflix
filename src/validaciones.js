@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const validation = yup.object().shape({
+export const validationFormVideo = yup.object().shape({
     title: yup
       .string()
       .required('Campo requerido'),
@@ -15,7 +15,24 @@ const validation = yup.object().shape({
       .required("campo requerido"),
       select: yup
       .string()
+      .required("campo requerido"),
+      codigo: yup
+      .string()
       .required("campo requerido")
   });
+  export const validationFormCategoria = yup.object().shape({
+    name: yup
+      .string()
+      .required('Campo requerido'),
+      descripcion: yup
+      .string()
+      .required("Campo requerido"),
+    color: yup
+      .string()
+      .test('no-blank', 'El color no puede ser blanco', value => value !== '#ffffff'),
+    codigo: yup
+      .string()
+      .required("campo requerido"),
+      
+  })
 
-  export default validation;

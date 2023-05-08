@@ -22,7 +22,7 @@ const profesiones= [
 
 export default function BasicSelect() {
   
-  const formik = useContext(CounterContext);
+  const {formik}= useContext(CounterContext);
 
 
   return (

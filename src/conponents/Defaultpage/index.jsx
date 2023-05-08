@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colorGrayDark } from "../Ui/Variables";
 import RegistroVideo from "../Registro/RegistroVideo";
+import RegistroCategoria from "../Registro/RegistroCategoria";
 import { CounterFormik } from "../../Context";
 
 
@@ -18,6 +19,7 @@ export const Defaultpage = ()=>{
         <CounterFormik>
             <StyleDefault>
                 <RegistroVideo/>
+                <RegistroCategoria/>
             </StyleDefault>
         </CounterFormik>
     )

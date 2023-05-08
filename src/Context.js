@@ -1,6 +1,7 @@
 import { createContext } from "react";
 import { useFormik } from "formik";
-import validation from "./validaciones";
+import  {validationFormVideo, validationFormCategoria} from "../src/validaciones"
+
 
 export const CounterContext = createContext();
 
@@ -12,14 +13,33 @@ export const CounterFormik = ({children})=>{
           urlImg: "",
           textArea:"",
           select:"",
+          codigo:""
         },
-        validationSchema: validation,
+        validationSchema: validationFormVideo,
         onSubmit: (values) => {
           alert(JSON.stringify(values, null, 2));
           
         },
       });
-    return <CounterContext.Provider value={formik}>
+      const formik2 = useFormik({
+        initialValues: {
+          name: '',
+          descripcion: '',
+          color:"#ffffff",
+          codigo:""
+        },
+        validationSchema: validationFormCategoria,
+        onSubmit: (values) => {
+          alert(JSON.stringify(values, null, 2));
+          
+        },
+      });
+
+      const values ={
+        formik,
+        formik2
+      }
+    return <CounterContext.Provider value={values}>
         {children}
     </CounterContext.Provider>
 }
