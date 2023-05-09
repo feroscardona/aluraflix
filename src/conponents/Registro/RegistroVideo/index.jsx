@@ -7,6 +7,7 @@ import BasicSelect from '../../Select';
 import { Box} from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { colorGrayLighter } from '../../Ui/Variables';
+import { Link } from 'react-router-dom';
 
 
 const RegistroVideo = () => {
@@ -135,14 +136,14 @@ const RegistroVideo = () => {
           </Box>
           {window.innerWidth > 375 ?
           <Box >
-          <Button sx={{width:"100%"}} color="primary" variant="contained">
+          <Link to={"/registrocategoria"}><Button sx={{width:"100%"}} color="primary" variant="contained">
             Nueva Categoría
-          </Button>
+          </Button></Link>
           </Box>:
                     <Box sx={{width:"100%"}}>
-                    <Button sx={{width:"100%"}} color="primary" variant="contained">
+                    <Link to="/registrocategoria"><Button sx={{width:"100%"}} color="primary" variant="contained">
                       Nueva Categoría
-                    </Button>
+                    </Button></Link>
                     </Box>
           }
           
