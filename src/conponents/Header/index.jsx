@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { MiButton } from "../Botton";
-import logo from "../../img/logo_AluraFlix.png"
-
 import { colorGrayDark } from "../Ui/Variables";
 import { Link } from "react-router-dom";
 
@@ -18,16 +16,14 @@ const StyleHeader = styled.section`
     }
     
 `
-const StyleImg = styled.img`
-    
-`
+
 
 
 
 const Header = ()=>{
     return (
         <StyleHeader>
-            <StyleImg src={logo} alt="logo"/>  
+            <img src="/img/logo_AluraFlix.png" alt="logo"/>  
             
              {window.innerWidth > 375 && <Link to="/registroVideo"><MiButton fontColor={"white"} colorBorder={"White"} >Nuevo video</MiButton></Link>}
         </StyleHeader>

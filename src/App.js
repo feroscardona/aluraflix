@@ -10,10 +10,9 @@ function App() {
     <main>
       <GlobalStyle/>
       <Router>
-
-      <Header/>
-      <Defaultpage/>
-      <Footer/>
+        <Header/>
+        <Defaultpage/>
+        <Footer/>
       </Router>
     </main>
   );

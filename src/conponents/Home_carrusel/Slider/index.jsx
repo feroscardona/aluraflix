@@ -1,11 +1,18 @@
 import Slider from "react-slick";
+import { useContext, useEffect, useState } from "react";
+import { CounterContext } from "../../../Context";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
 
 
- const SimpleSlider =()=>{
-   
+ const SimpleSlider =({url})=>{
+    const {buscar} = useContext(CounterContext);
+    const [posts, setPosts] = useState([]);
+    useEffect(()=>{
+        buscar(url,setPosts)
+        
+    },[url])
     const settings = {
       dots: true,
       infinite: true,
@@ -15,31 +22,26 @@ import "slick-carousel/slick/slick-theme.css";
       autoplaySpeed: 4000,
       pauseOnHover: true
     };
-    return (
-      <div>
-        <h2>Front-end</h2>
+
+      return (
+        
+        <div style={{padding:"20px"}} >
+          
         <Slider {...settings}>
-          <div>
-            <h3>video 1</h3>
+        
+
+        {posts.map(({id,linkimagen}) => (
+          <div key={id}
+            
+          >
+            <img style={{ width:"80%",marginLeft:"10px"}} src={linkimagen} alt={linkimagen} />
           </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
+        ))}
+        
         </Slider>
       </div>
     );
   
+    
 }
 export default SimpleSlider

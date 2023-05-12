@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colorGrayDark } from "../Ui/Variables";
 import RegistroVideo from "../Registro/RegistroVideo";
 import RegistroCategoria from "../Registro/RegistroCategoria";
-import { CounterFormik } from "../../Context";
+import { CounterGlobal} from "../../Context";
 import { Routes, Route } from "react-router-dom";
 import Carrusel from "../Home_carrusel/Carrusel";
 import Page404 from "../Page404";
@@ -18,7 +18,7 @@ const StyleDefault = styled.section`
 
 export const Defaultpage = ()=>{
     return (
-        <CounterFormik>
+        <CounterGlobal>
             <StyleDefault>
              
                 <Routes>
@@ -30,6 +30,6 @@ export const Defaultpage = ()=>{
                 </Routes>
              
             </StyleDefault>
-        </CounterFormik>
+        </CounterGlobal>
     )
 }

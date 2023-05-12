@@ -1,12 +1,40 @@
 {
-"producto": [
+"videos": [
     {
-      "imgUrl": "imagenes/posillo-cascoblanco.png",
-      "categoria": "starwars",
-      "name": "pocillo star wars",
-      "precio": "15.000",
-      "descripcion": "pocillo de star wars blanco echo en cerámica  ",
+      "titulo":"curso de HTML",
+      "linkVideo": "https://youtu.be/ov7vA5HFe6w",
+      "categoria": "Front-end",
+      "linkimagen": "/img/pensar-como-programador.png",
+      "descripcion": "como hacer tu primera pagina web con HTML ",
+      "codigoSeguridad":"",
       "id": "Xtd3ZIhmYT"
+    },
+    {
+      "titulo":"curso de HTML",
+      "linkVideo": "https://youtu.be/ov7vA5HFe6w",
+      "categoria": "Front-end",
+      "linkimagen": "/img/pensar-como-programador.png",
+      "descripcion": "como hacer tu primera pagina web con HTML ",
+      "codigoSeguridad":"",
+      "id": "Xtd3ZIh16351"
+    },
+    {
+      "titulo":"curso de HTML",
+      "linkVideo": "https://youtu.be/ov7vA5HFe6w",
+      "categoria": "Front-end",
+      "linkimagen": "/img/pensar-como-programador.png",
+      "descripcion": "como hacer tu primera pagina web con HTML ",
+      "codigoSeguridad":"",
+      "id": "Xtd3ZIh16351"
     }
+
+],
+"categorias":[
+  {
+    "nombre":"Front-End",
+    "descripcion":"",
+    "color":"",
+    "codigoSeguridad":""
+  }
 ]
 }

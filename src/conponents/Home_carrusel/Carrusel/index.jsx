@@ -7,10 +7,12 @@ const StyleCarrusel = styled.section`
     width: 100%;
 `
 const Carrusel = () =>{
+
+    
     return (
         <StyleCarrusel>
-            <VideoCard/>
-            <SimpleSlider/>
+            
+            <SimpleSlider url={"/videos"}/>
         </StyleCarrusel>
     )
 };

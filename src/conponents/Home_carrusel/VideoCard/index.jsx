@@ -1,13 +1,13 @@
 import ReactPlayer from "react-player";
 import styled from "styled-components";
 import { Typography } from "@mui/material";
-import baner from "../../../img/baner2.png"
+
 
 const ContentVideoCart = styled.section`
     width: 100%;
     display: flex;
     align-items: center;
-    background: linear-gradient(360deg, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.9) 80%), url(${baner});;
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.9) 80%), url("/img/baner2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

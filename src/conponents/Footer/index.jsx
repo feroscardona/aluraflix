@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { colorGrayDark } from "../Ui/Variables";
-import logo from "../../img/logo_AluraFlix.png"
 const Stylepie = styled.section`
     width: 100%;
     padding: 20px 40px;
@@ -14,6 +13,6 @@ const StyleImg = styled.img`
 `
 export const Footer = ()=>{
     return <Stylepie>
-        <StyleImg src={logo} alt="logo"/>
+        <StyleImg src="/img/logo_AluraFlix.png" alt="logo"/>
     </Stylepie>
 }
