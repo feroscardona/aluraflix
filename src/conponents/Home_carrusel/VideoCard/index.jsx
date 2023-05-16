@@ -1,7 +1,9 @@
 import ReactPlayer from "react-player";
 import styled from "styled-components";
 import { Typography } from "@mui/material";
-
+import { useState, useEffect } from "react";
+import { buscar } from "../../../api";
+import {useParams, useNavigate} from "react-router-dom"
 
 const ContentVideoCart = styled.section`
     width: 100%;
@@ -37,21 +39,46 @@ border: solid 2px aqua;
         width: 100%;
     }
 `
-export const StyleFont = styled(Typography)`
-    width: max-content;
-    background-color: aqua;
+const StyleFont = styled(Typography)`
+width: fit-content;
+position: relative;
+text-decoration: line-through;
+text-decoration-color: aqua;
+text-decoration-thickness:35px;
+
+&::after{
+    content: "${props=>props.titulo}";
+    width: fit-content;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+}
+
 `
 
+
+
 const VideoCard = () =>{
+    const [video, setVideo]=useState([]);
+    const {id}= useParams();
+    const navigate = useNavigate()
+    useEffect(()=>{
+        buscar(`/videos/${id}`,setVideo).catch(()=>{
+            navigate("/notfoutn")
+        })
+    },[id, navigate])
+
 
    return <ContentVideoCart>
    <BoxFont>
-        <StyleFont  variant="h4" component="h1"color="white">FrontEnt</StyleFont>
-        <Typography paragraph align="justify" component="p"color="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tempore earum! Vero, dolor placeat sunt ipsam sint quaerat facere minima quas sit eum similique est aut magni? Velit, eaque rerum!</Typography>
+       
+        <StyleFont  variant="h4" component="h1"color="white" titulo={video.titulo}>{video.titulo}</StyleFont>
+        <Typography paragraph align="justify" component="p"color="white">{video.descripcion}</Typography>
    </BoxFont>
    <BoxVideo>
         <ReactPlayer
-        url='https://youtu.be/ov7vA5HFe6w'
+        url={video.linkVideo}
         width="100%"
         playing
         controls

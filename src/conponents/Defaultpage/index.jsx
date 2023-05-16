@@ -5,7 +5,10 @@ import RegistroCategoria from "../Registro/RegistroCategoria";
 import { CounterGlobal} from "../../Context";
 import { Routes, Route } from "react-router-dom";
 import Carrusel from "../Home_carrusel/Carrusel";
+import Home from "../Home";
 import Page404 from "../Page404";
+
+
 
 
 
@@ -22,7 +25,8 @@ export const Defaultpage = ()=>{
             <StyleDefault>
              
                 <Routes>
-                    <Route path="/" element={<Carrusel/>}/>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/videos/*" element={<Carrusel/>}/>
                     <Route path="/registroVideo" element={<RegistroVideo/>}/>
                     <Route path="/registroCategoria" element={<RegistroCategoria/>}/>
                     <Route path="*" element={<Page404/>}/>

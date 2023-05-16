@@ -14,7 +14,7 @@ const Page404 = () =>{
         <Style404>
             <img src={"/img/img404.png"} alt="404" width={"300px"} />
             <div style={{display:"flex",flexDirection:"column", alignItems:"center"}}>
-              <Typography variant="h3" component={"samp"} color={"white"}>Esta página  existe</Typography>
+              <Typography variant="h3" component={"samp"} color={"white"}>Esta página no existe</Typography>
               <img src={"/img/cariFlix.png"} alt="mascota" width="300px"/>
             </div>
         </Style404>

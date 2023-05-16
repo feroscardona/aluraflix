@@ -1,40 +1,45 @@
 {
-"videos": [
+  "videos": [
     {
-      "titulo":"curso de HTML",
+      "titulo": "curso de HTML",
       "linkVideo": "https://youtu.be/ov7vA5HFe6w",
       "categoria": "Front-end",
       "linkimagen": "/img/pensar-como-programador.png",
       "descripcion": "como hacer tu primera pagina web con HTML ",
-      "codigoSeguridad":"",
-      "id": "Xtd3ZIhmYT"
+      "codigoSeguridad": "",
+      "id": "1"
     },
     {
-      "titulo":"curso de HTML",
-      "linkVideo": "https://youtu.be/ov7vA5HFe6w",
+      "titulo": "Cuando utilizar let var y const",
+      "linkVideo": "https://youtu.be/PztCEdIJITY",
       "categoria": "Front-end",
-      "linkimagen": "/img/pensar-como-programador.png",
+      "linkimagen": "/img/LetVarConst.png",
       "descripcion": "como hacer tu primera pagina web con HTML ",
-      "codigoSeguridad":"",
+      "codigoSeguridad": "",
       "id": "Xtd3ZIh16351"
     },
     {
-      "titulo":"curso de HTML",
+      "titulo": "curso de HTML",
       "linkVideo": "https://youtu.be/ov7vA5HFe6w",
       "categoria": "Front-end",
-      "linkimagen": "/img/pensar-como-programador.png",
+      "linkimagen": "/img/QueEsJavaScript.png",
       "descripcion": "como hacer tu primera pagina web con HTML ",
-      "codigoSeguridad":"",
-      "id": "Xtd3ZIh16351"
+      "codigoSeguridad": "",
+      "id": "Xtd3ZIh163512"
     }
-
-],
-"categorias":[
-  {
-    "nombre":"Front-End",
-    "descripcion":"",
-    "color":"",
-    "codigoSeguridad":""
-  }
-]
+  ],
+  "categorias": [
+    {
+      "nombre": "Front-end",
+      "descripcion": "",
+      "color": "#6BD1FF",
+      "codigoSeguridad": ""
+    },
+    {
+      "nombre": "Back-End",
+      "descripcion": "",
+      "color": "#00C86F",
+      "codigoSeguridad": ""
+    }
+  ]
 }

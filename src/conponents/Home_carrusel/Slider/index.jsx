@@ -1,18 +1,26 @@
 import Slider from "react-slick";
-import { useContext, useEffect, useState } from "react";
-import { CounterContext } from "../../../Context";
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import { buscar} from "../../../api";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 
+const Styledimg=styled.img`
+  border:solid 3px green;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 80% ;
+  margin-left:10px;
+`
 
  const SimpleSlider =({url})=>{
-    const {buscar} = useContext(CounterContext);
     const [posts, setPosts] = useState([]);
     useEffect(()=>{
         buscar(url,setPosts)
         
-    },[url])
+    },[url]);
     const settings = {
       dots: true,
       infinite: true,
@@ -31,10 +39,12 @@ import "slick-carousel/slick/slick-theme.css";
         
 
         {posts.map(({id,linkimagen}) => (
-          <div key={id}
+          <div key={id}>
             
-          >
-            <img style={{ width:"80%",marginLeft:"10px"}} src={linkimagen} alt={linkimagen} />
+            <Link to={`/videos/${id}`}>
+              <Styledimg  src={linkimagen} alt={linkimagen} />
+            </Link>
+            
           </div>
         ))}
         
