@@ -1,45 +1,87 @@
 {
   "videos": [
     {
-      "titulo": "curso de HTML",
+      "titulo": "Spirng framework",
+      "linkVideo": "https://youtu.be/t-iqt1b2qqk",
+      "categoria": "Back-end",
+      "linkimagen": "/img/sprignFramework.png",
+      "descripcion": "¿Busca un framework  para utilizar en sus proyectos? ¿Conoce Spring Framework? Spring es el framework más usado de Java. Nos ofrece herramientas que nos permiten crear proyectos más avanzados, con mejores prácticas y en menor tiempo. También posee una gran comunidad, lo que nos brinda muchísima documentación y ayuda.",
+      "codigoSeguridad": "aprobado",
+      "id": "z_xmuyi"
+    },
+    {
+      "titulo": "Que significa pensar como programador ",
       "linkVideo": "https://youtu.be/ov7vA5HFe6w",
       "categoria": "Front-end",
       "linkimagen": "/img/pensar-como-programador.png",
-      "descripcion": "como hacer tu primera pagina web con HTML ",
-      "codigoSeguridad": "",
-      "id": "1"
+      "descripcion": "¿Cuáles son las principales características de un programador? ¿Qué habilidades y competencias debe tener alguien que quiere seguir esa carrera? \n\nEn este video Christian Velasco nos habla de las principales características de un Programador.",
+      "codigoSeguridad": "aprobado",
+      "id": "4w8iKlv"
     },
     {
-      "titulo": "Cuando utilizar let var y const",
+      "titulo": "Cuándo usar let, var y const?",
       "linkVideo": "https://youtu.be/PztCEdIJITY",
       "categoria": "Front-end",
       "linkimagen": "/img/LetVarConst.png",
-      "descripcion": "como hacer tu primera pagina web con HTML ",
-      "codigoSeguridad": "",
-      "id": "Xtd3ZIh16351"
+      "descripcion": "¿A veces cuando estás programando sientes dificultades en saber en qué momento utilizar let, var o const para declarar una variable? En este video te sacamos estas dudas, además de explicarte lo que es escopo global y local en JavaScript.",
+      "codigoSeguridad": "aprobado",
+      "id": "RY9kgQP"
     },
     {
-      "titulo": "curso de HTML",
-      "linkVideo": "https://youtu.be/ov7vA5HFe6w",
+      "titulo": "¿Qué es JavaScript?",
+      "linkVideo": "https://youtu.be/GJfOSoaXk4s",
       "categoria": "Front-end",
       "linkimagen": "/img/QueEsJavaScript.png",
-      "descripcion": "como hacer tu primera pagina web con HTML ",
-      "codigoSeguridad": "",
-      "id": "Xtd3ZIh163512"
+      "descripcion": "JavaScript: ¿qué es y cómo se hizo este lenguaje que genera muchas discusiones y debates entre la gente del área de desarrollo? Genesys y Gabriela nos hablan exactamente de esto en este Alura Tips.",
+      "codigoSeguridad": "aprobado",
+      "id": "9KFXMPk"
+    },
+    {
+      "titulo": "Equipo Front End",
+      "linkVideo": "https://youtu.be/rpvrLaBQwgg",
+      "categoria": "Front-end",
+      "linkimagen": "/img/EquipoFrontEnd.png",
+      "descripcion": "¿Estás empezando tus estudios de Programación? ¿Te interesa todo lo que es la creación de Páginas Web Desarrollo de Softwares? ¿O estás pensando en cambiar de carrera y entrar a la maravillosa area de tecnología?\n\nEn este video, Jeanmarie Quijada, instructora Front End en Alura Latam te explica qué hace el equipo de Front End.",
+      "codigoSeguridad": "aprobado",
+      "id": "wnLf34j"
+    },
+    {
+      "titulo": "¿Qué es SQL y NoSQL?",
+      "linkVideo": "https://youtu.be/cLLKVd5CNLc",
+      "categoria": "Back-end",
+      "linkimagen": "/img/queesSQLyNOSQL.png",
+      "descripcion": "¿Cuáles son las diferencias entre una estructura de datos relacional (SQL) y una no relacional (NoSQL) y cuáles son las principales ventajas de cada una? Álvaro Camacho lo explica en este vídeo.",
+      "codigoSeguridad": "aprobado ",
+      "id": "ommWf7g"
+    },
+    {
+      "titulo": "Simplificando tu código en Java: Conoce los enum",
+      "linkVideo": "https://youtu.be/EoPvlE85XAQ",
+      "categoria": "Back-end",
+      "linkimagen": "/img/SimplificandoCodicoJava.png",
+      "descripcion": "¿Escribir muchas variables del tipo constantes en Java te parece un proceso tedioso y que genera muchas líneas de código? \nEn este Alura+ la instructora Génesys Rondón nos enseña a simplificar esta tarea usando un tipo de dato especial llamado enum.",
+      "codigoSeguridad": "aprobado",
+      "id": "luSjq4L"
     }
   ],
   "categorias": [
     {
       "nombre": "Front-end",
-      "descripcion": "",
+      "descripcion": "Formación Front End de Alura Latam",
       "color": "#6BD1FF",
-      "codigoSeguridad": ""
+      "codigoSeguridad": "aprobado"
     },
     {
-      "nombre": "Back-End",
-      "descripcion": "",
+      "nombre": "Back-end",
+      "descripcion": "Formación Back End de Alura Latam",
       "color": "#00C86F",
-      "codigoSeguridad": ""
+      "codigoSeguridad": "aprobado"
+    },
+    {
+      "nombre": "desarroryo-ui",
+      "descripcion": "Formación Back End de Alura Latam",
+      "color": "#00C86F",
+      "codigoSeguridad": "aprobado"
     }
   ]
 }

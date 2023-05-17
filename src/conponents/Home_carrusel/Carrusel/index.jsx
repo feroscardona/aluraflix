@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Route, Routes, } from "react-router-dom";
-import SimpleSlider from "../Slider";
+import Slider from "../Slider";
 import VideoCard from "../VideoCard";
 
 const StyleCarrusel = styled.section`
@@ -16,7 +16,8 @@ const Carrusel = () =>{
             <Routes>
             <Route path="/:id" element={<VideoCard/>}/>
             </Routes>
-            <SimpleSlider url={"/videos/"} />
+                <Slider url={"/videos/"} />
+         
         </StyleCarrusel>
     )
 };

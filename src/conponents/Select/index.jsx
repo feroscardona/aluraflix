@@ -4,24 +4,19 @@ import Box from '@mui/material/Box';
 import MenuItem from '@mui/material/MenuItem';
 import { TextField } from '@mui/material';
 import { colorGrayLighter, grisOscuro } from '../Ui/Variables';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { buscar } from '../../api';
 
 
 
-const profesiones= [
-    'Fron-ent',
-    'Back-ent',
-    'mobile',
-    'Ralph Hubbard',
-    'Omar Alexander',
-    'Carlos Abbott',
-    'Miriam Wagner',
-    'Bradley Wilkerson',
-    'Virginia Andrews',
-    'Kelly Snyder',
-  ];
+
 
 export default function BasicSelect() {
-  
+    const [profesiones, setProfeciones] = useState([]);
+    useEffect(()=>{
+      buscar("/categorias", setProfeciones)
+    },[])
   const {formik}= useContext(CounterContext);
 
 
@@ -56,8 +51,8 @@ export default function BasicSelect() {
         >
           {profesiones.map((opcion,index) => (
             <MenuItem 
-            key={index} value={opcion}>
-              {opcion}
+            key={index} value={opcion.nombre}>
+              {opcion.nombre}
             </MenuItem>
           ))}
         </TextField>
