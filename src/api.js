@@ -20,3 +20,12 @@ export const postear = ({title,urlVideo,urlImg,textArea,select,codigo})=>{
     codigoSeguridad:codigo,
   })
 }
+
+export const postearCategoria =({nombre,descripcion,color,codigoSeguridad})=>{
+  api.post("/categorias",{
+    nombre,
+    descripcion,
+    color,
+    codigoSeguridad
+  })
+}

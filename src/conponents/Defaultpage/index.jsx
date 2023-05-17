@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Carrusel from "../Home_carrusel/Carrusel";
 import Home from "../Home";
 import Page404 from "../Page404";
+import { MyTable } from "../tabla";
 
 
 
@@ -29,6 +30,7 @@ export const Defaultpage = ()=>{
                     <Route path="/videos/*" element={<Carrusel/>}/>
                     <Route path="/registroVideo" element={<RegistroVideo/>}/>
                     <Route path="/registroCategoria" element={<RegistroCategoria/>}/>
+                    <Route path="/tabla" element={<MyTable/>}/>
                     <Route path="*" element={<Page404/>}/>
                     
                 </Routes>

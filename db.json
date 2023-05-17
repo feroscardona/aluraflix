@@ -69,19 +69,22 @@
       "nombre": "Front-end",
       "descripcion": "Formación Front End de Alura Latam",
       "color": "#6BD1FF",
-      "codigoSeguridad": "aprobado"
+      "codigoSeguridad": "aprobado",
+      "id": "4w8id10"
     },
     {
       "nombre": "Back-end",
       "descripcion": "Formación Back End de Alura Latam",
       "color": "#00C86F",
-      "codigoSeguridad": "aprobado"
+      "codigoSeguridad": "aprobado",
+      "id": "luSjq4Lds"
     },
     {
-      "nombre": "desarroryo-ui",
-      "descripcion": "Formación Back End de Alura Latam",
-      "color": "#00C86F",
-      "codigoSeguridad": "aprobado"
+      "nombre": "Mobile",
+      "descripcion": "Formación Mobile de Alura Latam",
+      "color": "#ffba05",
+      "codigoSeguridad": "aprobado",
+      "id": "hrMvF92"
     }
   ]
 }

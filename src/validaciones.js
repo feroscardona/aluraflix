@@ -21,7 +21,7 @@ export const validationFormVideo = yup.object().shape({
       .required("campo requerido")
   });
   export const validationFormCategoria = yup.object().shape({
-    name: yup
+    nombre: yup
       .string()
       .required('Campo requerido'),
       descripcion: yup
@@ -30,7 +30,7 @@ export const validationFormVideo = yup.object().shape({
     color: yup
       .string()
       .test('no-blank', 'El color no puede ser blanco', value => value !== '#ffffff'),
-    codigo: yup
+      codigoSeguridad: yup
       .string()
       .required("campo requerido"),
       

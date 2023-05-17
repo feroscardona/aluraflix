@@ -1,7 +1,8 @@
 import { createContext } from "react";
 import { useFormik } from "formik";
 import  {validationFormVideo, validationFormCategoria} from "../src/validaciones"
-import { postear } from "./api";
+import { postear, postearCategoria} from "./api";
+import Swal from "sweetalert2";
 
 
 
@@ -20,20 +21,35 @@ export const CounterGlobal = ({children})=>{
         validationSchema: validationFormVideo,
         onSubmit: (values) => {
           postear(values)
-          alert(JSON.stringify(values, null, 2));
+          Swal.fire({
+            title: 'Guardado con exito',
+            width: 600,
+            padding: '3em',
+            color: "#3D45F5",
+            background: '#fff url(/img/rodando.gif)',
+
+          });
           
         },
       });
       const formik2 = useFormik({
         initialValues: {
-          name: '',
+          nombre: '',
           descripcion: '',
           color:"#ffffff",
-          codigo:""
+          codigoSeguridad:""
         },
         validationSchema: validationFormCategoria,
         onSubmit: (values) => {
-          alert(JSON.stringify(values, null, 2));
+          postearCategoria(values)
+          Swal.fire({
+            title: 'Guardado con exito',
+            width: 600,
+            padding: '3em',
+            color: "#3D45F5",
+            background: '#fff url(/img/rodando.gif)',
+
+          });
           
         },
       });

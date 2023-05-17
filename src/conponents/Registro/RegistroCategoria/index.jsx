@@ -28,13 +28,13 @@ const RegistroCategoria = () => {
           }}
           variant="filled"
           fullWidth
-          name="name"
+          name="nombre"
           label="Nombre"
           type='text'
-          value={formik2.values.name}
+          value={formik2.values.nombre}
           onChange={formik2.handleChange}
-          error={formik2.touched.name && Boolean(formik2.errors.name)}
-          helperText={formik2.touched.name && formik2.errors.name}
+          error={formik2.touched.nombre && Boolean(formik2.errors.nombre)}
+          helperText={formik2.touched.nombre && formik2.errors.nombre}
         />
                 <CampoTexto
           sx={{ backgroundColor:`${colorGrayLighter}`, marginBottom:"20px", borderRadius:"4px",
@@ -87,13 +87,13 @@ const RegistroCategoria = () => {
             shrink: true,
           }}
           fullWidth
-          name="codigo"
+          name="codigoSeguridad"
           label="Código de seguridad"
           type="text"
-          value={formik2.values.codigo}
+          value={formik2.values.codigoSeguridad}
           onChange={formik2.handleChange}
-          error={formik2.touched.codigo && Boolean(formik2.errors.codigo)}
-          helperText={formik2.touched.codigo && formik2.errors.codigo}
+          error={formik2.touched.codigoSeguridad && Boolean(formik2.errors.codigoSeguridad)}
+          helperText={formik2.touched.codigoSeguridad && formik2.errors.codigoSeguridad}
           
         />
         
