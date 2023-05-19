@@ -1,11 +1,37 @@
 import SimpleSlider from "../../slid";
 import { useEffect, useState } from "react";
 import { buscar} from "../../../api";
+import styled from "styled-components";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
+const ubicacion =()=>{
+  const addres = window.location.pathname ==="/"
+  if(addres)
+   return"600px"
+   else
+   return"300px"
+}
 
 
+const CotainerSlider = styled.div`
+  position: sticky;
+  top: 0;
+  height: ${ubicacion};
+  overflow: scroll;
+  &::-webkit-scrollbar {
+  width: 0.12em;
+}
+`
+const Texth2 = styled.h2`
+  font-size: 1.5rem;
+  border-radius:2px;
+  padding: 4px;
+  margin-right:5px;
+  display: inline-block;
+  background-color: ${props=>props.backgroun};
+  color: white;
+`
 
 
  const Slider =({url})=>{
@@ -14,23 +40,20 @@ import "slick-carousel/slick/slick-theme.css";
         buscar(url,setVideos)
     },[url]);  
 
-    
-
     const [categorias, setCategorias]= useState([]);
     useEffect(()=>{
       buscar("/categorias",setCategorias)
     },[url])
 
-    videos.filter(video=>video.categoria === "Front-end")
-
-      return <>
+      return <CotainerSlider>
         
           {categorias.map((category, index)=>{
            const video= videos.filter((video)=>video.categoria === category.nombre)
             
         return video.length>0 &&<div style={{padding:"20px"}} key={index}>
-                  <div >
-                    <h2>{category.nombre}</h2>
+                  <div>
+                    <Texth2 backgroun={category.color}>{category.nombre}</Texth2>
+                    <span style={{color:"white"}}>{category.descripcion}</span>
                     <SimpleSlider 
                       datos={video}
                       color={category.color}
@@ -40,7 +63,7 @@ import "slick-carousel/slick/slick-theme.css";
                 </div>
             })}
       
-    </>;
+    </CotainerSlider>;
   
     
 }

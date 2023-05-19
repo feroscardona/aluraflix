@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colorGrayDark, colorGrayMedium } from '../Ui/Variables';
+import {  colorGrayMedium } from '../Ui/Variables';
 import { useNavigate } from 'react-router-dom';
 
 const Table = styled.table`
@@ -11,15 +11,17 @@ const Table = styled.table`
 `;
 
 const TableHeader = styled.th`
- background-color: ${colorGrayDark};
+  background-color: "#1A1A1A";
   border:3px solid #2A7AE4;
   padding: 4px;
   text-align: left;
   font-weight: 300;
   font-size: 18px;
+  
 `;
 
 const TableCell = styled.td`
+  background-color: "#1A1A1A";
   padding: 5px;
   border: 3px solid #000;
   font-weight: 100;
@@ -27,6 +29,7 @@ const TableCell = styled.td`
   word-wrap: break-word;
   max-width: 100px;
   overflow: auto;
+  box-shadow: inset -13px -13px 5px -9px rgba(232,216,232,0.62); 
 `;
 const CellMod = styled(TableCell)`
   text-align: center;

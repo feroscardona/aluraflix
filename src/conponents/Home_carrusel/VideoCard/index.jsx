@@ -14,6 +14,7 @@ const ContentVideoCart = styled.section`
     background-size: cover;
     background-position: center;
     padding-top:100px ;
+    position: sticky;
  @media screen and (max-width: 769px) {
         flex-direction: column;
     }
@@ -32,8 +33,8 @@ const BoxFont = styled.div`
 `
 const BoxVideo = styled.div`
 width: 55%;
-border: solid 2px aqua;
-
+border: solid 2px;
+border-color: ${props=>props.colorborde};
 
 @media screen and (max-width: 769px) {
         width: 100%;
@@ -43,7 +44,7 @@ const StyleFont = styled(Typography)`
 width: fit-content;
 position: relative;
 text-decoration: line-through;
-text-decoration-color: aqua;
+text-decoration-color: ${props=>props.decoracioncolor};
 text-decoration-thickness:35px;
 
 &::after{
@@ -69,14 +70,22 @@ const VideoCard = () =>{
         })
     },[id, navigate])
 
+    const [categorias, setCategorias]= useState([]);
+    useEffect(()=>{
+      buscar("/categorias",setCategorias)
+    },[])
+    
+    const filtro = categorias.find(dato=>dato.nombre === video.categoria)
+    const colorCategory = filtro && filtro.color
 
+   
    return <ContentVideoCart>
    <BoxFont>
        
-        <StyleFont  variant="h4" component="h1"color="white" titulo={video.titulo}>{video.titulo}</StyleFont>
+        <StyleFont decoracioncolor={colorCategory} variant="h4" component="h1"color="white" titulo={video.titulo}>{video.titulo}</StyleFont>
         <Typography paragraph align="justify" component="p"color="white">{video.descripcion}</Typography>
    </BoxFont>
-   <BoxVideo>
+   <BoxVideo colorborde={colorCategory}>
         <ReactPlayer
         url={video.linkVideo}
         width="100%"

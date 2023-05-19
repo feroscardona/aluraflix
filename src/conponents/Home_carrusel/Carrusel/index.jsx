@@ -6,7 +6,6 @@ import VideoCard from "../VideoCard";
 const StyleCarrusel = styled.section`
     width: 100%;
 `
-
   
 
 const Carrusel = () =>{
@@ -16,7 +15,7 @@ const Carrusel = () =>{
             <Routes>
             <Route path="/:id" element={<VideoCard/>}/>
             </Routes>
-                <Slider url={"/videos/"} />
+                <Slider url={"/videos/"}/>
          
         </StyleCarrusel>
     )
