@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { MiButton } from "../Botton";
 import { colorGrayDark } from "../Ui/Variables";
-import { Link } from "react-router-dom";
+import { Link, useLocation} from "react-router-dom";
+import { useEffect, useState } from "react";
+
+
+
 
 const StyleHeader = styled.section`
     width: 100%;
@@ -18,16 +22,32 @@ const StyleHeader = styled.section`
 `
 
 
-
-
 const Header = ()=>{
+    const location = useLocation()
+    
+    const presentar = window.innerWidth > 375 && location.pathname === "/"
+
+    const [renderButton, setRender]= useState(null)
+    useEffect(()=>{
+        if(presentar){
+            setRender(<Link to="/registroVideo"><MiButton fontColor={"white"} colorBorder={"White"} >Nuevo video</MiButton></Link>)
+        }else
+            setRender(false)
+    },[location,presentar])
+        
+    
+        
+
+    
+
     return (
         <StyleHeader>
             <img src="/img/logo_AluraFlix.png" alt="logo"/>  
             
-             {window.innerWidth > 375 && <Link to="/registroVideo"><MiButton fontColor={"white"} colorBorder={"White"} >Nuevo video</MiButton></Link>}
+             {renderButton}
         </StyleHeader>
 
     )
 };
 export default Header;
+
