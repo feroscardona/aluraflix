@@ -3,9 +3,7 @@ import { MiButton } from "../Botton";
 import { colorGrayDark } from "../Ui/Variables";
 import { Link, useLocation} from "react-router-dom";
 import { useEffect, useState } from "react";
-
-
-
+import { useNavigate } from "react-router-dom";
 
 const StyleHeader = styled.section`
     width: 100%;
@@ -18,11 +16,15 @@ const StyleHeader = styled.section`
         padding: 10px 20px;
         justify-content: center;
     }
+    img:hover{ 
+        cursor: pointer;
+        transform: translate3d(10px, 30%, 1em) 
+    }
     
 `
 
-
 const Header = ()=>{
+    const navigate = useNavigate()
     const location = useLocation()
     
     const presentar = window.innerWidth > 375 && location.pathname === "/"
@@ -30,24 +32,17 @@ const Header = ()=>{
     const [renderButton, setRender]= useState(null)
     useEffect(()=>{
         if(presentar){
-            setRender(<Link to="/registroVideo"><MiButton fontColor={"white"} colorBorder={"White"} >Nuevo video</MiButton></Link>)
+            setRender(<Link to="/registroVideo"><MiButton fontColor={"white"} styleborder="1px solid white">Nuevo video</MiButton></Link>)
         }else
             setRender(false)
     },[location,presentar])
         
-    
-        
-
-    
-
-    return (
+return (
         <StyleHeader>
-            <img src="/img/logo_AluraFlix.png" alt="logo"/>  
-            
-             {renderButton}
+            <img onClick={()=>navigate("/")} src="/img/logo_AluraFlix.png" alt="logo"/>  
+            {renderButton}
         </StyleHeader>
-
-    )
+ )
 };
 export default Header;
 

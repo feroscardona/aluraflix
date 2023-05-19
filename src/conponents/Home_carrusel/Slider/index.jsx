@@ -31,6 +31,9 @@ const Texth2 = styled.h2`
   display: inline-block;
   background-color: ${props=>props.backgroun};
   color: white;
+  @media screen and (max-width: 376px) {
+    display: block;
+  }
 `
 
 

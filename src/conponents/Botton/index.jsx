@@ -1,14 +1,30 @@
-import {styled as muiStyled }from "@mui/material/styles";
-import  Button  from "@mui/material/Button";
+import styled from "styled-components";
 
 
-export const MiButton = ({fontColor="", colorBorder="", background="", children, manejoClick })=>{
-    const StyleButton= muiStyled(Button)`
-    color: ${fontColor};
-    border:1px solid ${colorBorder};
-    background: ${background};
-    
+const StyleButton = styled.button`
+color: ${props=>props.fontcolor};
+padding: 9px;
+border-radius: 2px;
+border:${props=>props.styleborder};
+background: ${props=>props.background};
+width:${props=>props.tamaño};
+cursor: pointer;
 `
-    return <StyleButton onClick={manejoClick}>{children }</StyleButton>  
+
+
+export const MiButton = ({tamaño="",fontColor="", styleborder="none", background="transparent", children, manejoClick })=>{
+
+    return (
+        <StyleButton 
+            onClick={manejoClick}
+            fontcolor={fontColor}
+            styleborder={styleborder}
+            background={background}
+            tamaño={tamaño}
+            
+        >
+            {children }
+        </StyleButton> 
+        ) 
 };
 
