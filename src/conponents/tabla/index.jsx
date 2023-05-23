@@ -46,7 +46,7 @@ const CellMod = styled(TableCell)`
 `
 
 const MyTable = () => {
-  const {recargar,setInf} = useContext(CounterContext)
+  const {recargar,setInfFormik2} = useContext(CounterContext)
     
 
     const [categorias, setCategorias] = useState([]);
@@ -72,7 +72,7 @@ const MyTable = () => {
               <TableCell>{categoria.descripcion}</TableCell>
               <CellMod onClick={()=>{
                 buscar(`/categorias/${categoria.id}`,respuesta=>{
-                  setInf(respuesta)
+                  setInfFormik2(respuesta)
                   
                   })
                 

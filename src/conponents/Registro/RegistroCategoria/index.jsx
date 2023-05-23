@@ -127,7 +127,7 @@ const RegistroCategoria = () => {
         </Box>
         
       </Box>
-      <MyTable setInf={setInfFormik2}/>
+      <MyTable/>
     </>
   );
 };

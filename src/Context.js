@@ -18,14 +18,13 @@ export const CounterGlobal = ({children})=>{
       textArea:"",
       select:"",
       codigo:""
-    })
+    });
     const [infFormik2, setInfFormik2]=useState({
       nombre: "",
       descripcion:"",
       color:"#ffffff",
       codigoSeguridad:"",
     });
-
     useEffect(() => {
       formik2.setValues({
         nombre: infFormik2.nombre,
