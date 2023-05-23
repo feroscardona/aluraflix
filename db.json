@@ -85,6 +85,13 @@
       "color": "#ffba05",
       "codigoSeguridad": "aprobado",
       "id": "hrMvF92"
+    },
+    {
+      "nombre": "Ux",
+      "descripcion": "Formación Ux de Alura Latam",
+      "color": "#dc6ebe",
+      "codigoSeguridad": "aprobado",
+      "id": "yo29S6N"
     }
   ]
 }

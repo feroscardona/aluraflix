@@ -1,5 +1,6 @@
 import axios from "axios"
 
+
 const api = axios.create({
     baseURL:"http://localhost:5000"
   })
@@ -28,4 +29,20 @@ export const postearCategoria =({nombre,descripcion,color,codigoSeguridad})=>{
     color,
     codigoSeguridad
   })
+}
+
+export const borrar = (url,id)=>{
+  api.delete(`${url}${id}`)
+};
+
+export const update = (url,datos)=>{
+  
+  const {nombre,descripcion,color,codigoSeguridad}=datos
+  api.put(`${url}`,{
+    nombre,
+    descripcion,
+    color,
+    codigoSeguridad,
+    
+  }).catch((error)=>alert(error))
 }

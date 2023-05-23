@@ -1,19 +1,17 @@
-import React from 'react';
-import { useContext } from 'react';
+import { useContext} from 'react';
 import { CounterContext } from '../../../Context';
 import  Button  from '@mui/material/Button';
 import CampoTexto from '../../CampoTexto';
 import { Box} from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { colorGrayLighter } from '../../Ui/Variables';
-
+import MyTable from '../../tabla';
 
 const RegistroCategoria = () => {
-  const {formik2} = useContext(CounterContext)
-  
-  
+  const {formik2,setInfFormik2} = useContext(CounterContext)
+
   return (
-    
+    <>
       <Box component="form"
         
         sx={{padding:"20px"}}
@@ -36,7 +34,7 @@ const RegistroCategoria = () => {
           error={formik2.touched.nombre && Boolean(formik2.errors.nombre)}
           helperText={formik2.touched.nombre && formik2.errors.nombre}
         />
-                <CampoTexto
+          <CampoTexto
           sx={{ backgroundColor:`${colorGrayLighter}`, marginBottom:"20px", borderRadius:"4px",
           ":hover":{
             backgroundColor:`${colorGrayLighter}`
@@ -96,13 +94,12 @@ const RegistroCategoria = () => {
           helperText={formik2.touched.codigoSeguridad && formik2.errors.codigoSeguridad}
           
         />
-        
 
         <Box sx={{
           display:'flex', 
           justifyContent:'space-between',
           flexWrap:"wrap",
-          paddingBottom:"130px"
+          paddingBottom:"20px"
           }}>
           <Box sx={{display:"flex",flexWrap:"wrap",gap:"5px", marginBottom:"30px"}}>
           <Button sx={{width:"150px",marginRight:"30px"}}color="primary" variant="contained"  type="submit">
@@ -115,6 +112,12 @@ const RegistroCategoria = () => {
               width:"150px"
             }} 
             hidden
+            onClick={()=>setInfFormik2({
+              nombre: "",
+              descripcion:"",
+              color:"#ffffff",
+              codigoSeguridad:"",
+            })}
           >
             Limpiar
          </Button>
@@ -124,7 +127,8 @@ const RegistroCategoria = () => {
         </Box>
         
       </Box>
-    
+      <MyTable setInf={setInfFormik2}/>
+    </>
   );
 };
 export default RegistroCategoria;

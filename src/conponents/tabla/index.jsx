@@ -1,7 +1,10 @@
 import React from 'react';
+import { useContext } from 'react';
+import { CounterContext } from '../../Context';
 import styled from 'styled-components';
 import {  colorGrayMedium } from '../Ui/Variables';
-import { useNavigate } from 'react-router-dom';
+import { useState,useEffect } from 'react';
+import { buscar, borrar} from '../../api';
 
 const Table = styled.table`
   width: 100%;
@@ -23,13 +26,13 @@ const TableHeader = styled.th`
 const TableCell = styled.td`
   background-color: "#1A1A1A";
   padding: 5px;
-  border: 3px solid #000;
+  border: 2px solid #000;
   font-weight: 100;
   font-size: 12px;
   word-wrap: break-word;
   max-width: 100px;
   overflow: auto;
-  box-shadow: inset -13px -13px 5px -9px rgba(232,216,232,0.62); 
+  
 `;
 const CellMod = styled(TableCell)`
   text-align: center;
@@ -42,8 +45,15 @@ const CellMod = styled(TableCell)`
   }
 `
 
-export const MyTable = () => {
-    const navigate = useNavigate()
+const MyTable = () => {
+  const {recargar,setInf} = useContext(CounterContext)
+    
+
+    const [categorias, setCategorias] = useState([]);
+    useEffect(()=>{
+      buscar("/categorias", setCategorias)
+    },[])
+
     return (
       <div style={{padding:"20px"}}>
       <Table>
@@ -55,17 +65,29 @@ export const MyTable = () => {
             <TableHeader style={{width:"5px"}}>Remover</TableHeader>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <TableCell>Dato 1</TableCell>
-            <TableCell>Dato 2</TableCell>
-            <CellMod onClick={()=>navigate("/registrovideo")}>Editar</CellMod>
-            <CellMod onClick={()=>console.log("click")}>Remover</CellMod>
-          </tr>
+        <tbody style={{border:"3px solid #2A7AE4"}}>
+           { categorias.map((categoria)=>{
+              return <tr key={categoria.id}>
+              <TableCell>{categoria.nombre}</TableCell>
+              <TableCell>{categoria.descripcion}</TableCell>
+              <CellMod onClick={()=>{
+                buscar(`/categorias/${categoria.id}`,respuesta=>{
+                  setInf(respuesta)
+                  
+                  })
+                
+              }}>Editar</CellMod>
+              <CellMod onClick={()=>{
+                borrar("/categorias/",categoria.id)
+                recargar()
+                }}>Remover</CellMod>
+            </tr>
+            })
+           }
 
         </tbody>
       </Table>
       </div>
     );
   };
-  
+  export default MyTable;

@@ -9,9 +9,8 @@ import Typography from '@mui/material/Typography';
 import { colorGrayLighter } from '../../Ui/Variables';
 import { Link } from 'react-router-dom';
 
-
 const RegistroVideo = () => {
-  const {formik} = useContext(CounterContext)
+  const {formik,setInfFormik} = useContext(CounterContext)
   
   return (
     
@@ -130,6 +129,14 @@ const RegistroVideo = () => {
               width:"150px"
             }} 
             hidden
+            onClick={()=>setInfFormik({
+              title: '',
+              urlVideo: '',
+              urlImg: "",
+              textArea:"",
+              select:"",
+              codigo:""
+            })}
           >
             Limpiar
          </Button>
@@ -147,9 +154,9 @@ const RegistroVideo = () => {
                     </Box>
           }
           
-        </Box>
-        
+        </Box>        
       </Box>
+       
     
   );
 };
