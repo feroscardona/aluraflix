@@ -2,7 +2,7 @@ import axios from "axios"
 
 
 const api = axios.create({
-    baseURL:"https://aluraflix.free.beeceptor.com"
+    baseURL:"https://localhost:5000/videos"
   })
 
 export const buscar =async (url,setData) => {
