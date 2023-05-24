@@ -53,7 +53,7 @@ const Texth2 = styled.h2`
           {categorias.map((category, index)=>{
            const video= videos.filter((video)=>video.categoria === category.nombre)
             
-        return video.length>0 &&<div style={{padding:"20px"}} key={index}>
+        return video.length>0 &&<div key={index}>
                   <div>
                     <Texth2 backgroun={category.color}>{category.nombre}</Texth2>
                     <span style={{color:"white"}}>{category.descripcion}</span>

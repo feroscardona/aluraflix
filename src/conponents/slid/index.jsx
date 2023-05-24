@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 const Styledimg=styled.img`
   border:solid 3px ;
   border-color:${props=>props.colorBorde};
-  border-radius: 2px;
+  border-radius: 3px;
   cursor: pointer;
-  width: 80% ;
+  width: 95% ;
   margin-left:10px;
 `
 const SimpleSlider =({datos, color})=>{ 
