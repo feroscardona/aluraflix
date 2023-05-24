@@ -56,7 +56,7 @@ const Texth2 = styled.h2`
         return video.length>0 &&<div key={index}>
                   <div>
                     <Texth2 backgroun={category.color}>{category.nombre}</Texth2>
-                    <span style={{color:"white"}}>{category.descripcion}</span>
+                    <span style={{color:"white",marginLeft:"10px"}}>{category.descripcion}</span>
                     <SimpleSlider 
                       datos={video}
                       color={category.color}
