@@ -12,7 +12,7 @@ cursor: pointer;
 `
 
 
-export const MiButton = ({tamaño="",fontColor="", styleborder="none", background="transparent", children, manejoClick })=>{
+export const MiButton = ({tamaño="red",fontColor="", styleborder="none", background="transparent", children, manejoClick })=>{
 
     return (
         <StyleButton 
