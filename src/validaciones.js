@@ -6,6 +6,7 @@ export const validationFormVideo = yup.object().shape({
       .required('Campo requerido'),
       urlVideo: yup
       .string()
+      .matches(/^https:\/\/www\.youtube\.com\//, "La URL debe comenzar con https://www.youtube.com/")
       .required("Campo requerido"),
       urlImg: yup
       .string()
